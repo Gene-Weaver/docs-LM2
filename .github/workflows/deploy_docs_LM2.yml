@@ -2,30 +2,49 @@ name: Deploy Documentation to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # Trigger the workflow on push events to the main branch
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2  # Checks-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt  # Install all dependencies from the requirements file
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-    - name: Build Documentation
-      run: |
-        sphinx-build -b html source/ build/  # Build HTML docs from source
+      - name: Build Documentation
+        run: |
+          sphinx-build -b html source/ build/
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # Provided by GitHub for authentication
-        publish_dir: ./build  # Directory where Sphinx outputs the HTML files
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './build'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
