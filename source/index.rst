@@ -66,10 +66,4 @@ leafmachine2 documentation
       
          Prepare your images
 
-.. toctree::
-   :maxdepth:
-
-   getting_started
-   modules
-   configuration_settings
 
