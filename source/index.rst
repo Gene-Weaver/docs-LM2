@@ -3,6 +3,14 @@ leafmachine2 documentation
 
 **Date:** May 07, 2024 **Version:** 2.1
 
+.. toctree::
+   :hidden:
+
+   getting_started/index
+   modules/index
+   configuration_settings/index
+   data_cleaning/index
+
 .. grid:: 2
    
    .. grid-item-card:: Getting Started
