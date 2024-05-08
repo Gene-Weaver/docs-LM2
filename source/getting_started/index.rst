@@ -13,3 +13,4 @@ The files below are assembled in a numbered order, and it is recommended to work
 
     prerequisites
     installation
+    testing_the_installation

@@ -20,8 +20,6 @@ The following instructions assume you are in the leafmachine2 directory. You may
 
 .. note:: You must name your virtual environment venv_LM2 if you want to use the desktop shortcut
 
-
-
 .. tab-set::
 
     .. tab-item:: Ubuntu 20.04+
@@ -110,3 +108,14 @@ We include a ``requirements.txt`` file in the ``LeafMachine2/requirements/`` fol
 
         5. ``pip install vit-pytorch==0.37.1``
 
+Troubleshooting CUDA
+--------------------
+
+- CUDA issues can be extremely frustrating. 
+- Start by finding your current CUDA version or installing the most recent CUDA version that is compatible with your GPU. 
+- Try installing the old version of PyTorch listed in these docs.
+- If that works, great! If not, you can install the [latest pytorch release](https://pytorch.org/get-started/locally/) for your specific OS and CUDA version.
+- If that fails, you might have a CUDA installation issue. 
+- If you cannot get the GPU working, then you can install PyTorch with CPU only, avoiding the CUDA problem entirely, but that is not recommended given that 
+LeafMachine2 is designed to use GPUs. The components that rely on ViT (binarization of labels) will *NOT* work without a GPU. The leaf segmentation may not work either, sometimes it does, sometimes not. 
+- We have also validated CUDA 12.4 with PyTorch 2.X. If you have success with other versions of CUDA/pytorch, let us know and we will update our instructions. 
