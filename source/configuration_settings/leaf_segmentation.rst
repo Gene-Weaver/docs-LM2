@@ -15,7 +15,7 @@ The LM2 leaf segmentation tool will try to segment all leaves that it sees, but 
 
 ⭐ This saves each cropped leaf with its overlay to individual files ``save_individual_overlay_images: True`` and this sets the overlay line width ``overlay_line_width: 1``
 
-⭐ LM2 can also save the masks to PNG files. To use the EFDs as the masks (these will be smooth compared to the raw mask) set ``use_efds_for_png_masks: False ``
+⭐ LM2 can also save the masks to PNG files. To use the EFDs as the masks (these will be smooth compared to the raw mask) set ``use_efds_for_png_masks: False``
 
 ⭐ To save individual leaf masks, set ``save_masks_color: True``
 
