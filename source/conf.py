@@ -7,4 +7,4 @@ html_theme_options = {
     "show_nav_level": 2,
 }
 exclude_patterns = ["_build", ".venv", "docs"]
-extensions = ["sphinx_design"]
+extensions = ["sphinx_design", "sphinx_copybutton"]
