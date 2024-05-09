@@ -51,7 +51,7 @@ leafmachine2 documentation
 
       +++
 
-      .. button-ref:: getting_started
+      .. button-ref:: configuration_settings
          :ref-type: ref
          :click-parent:
          :color: secondary
