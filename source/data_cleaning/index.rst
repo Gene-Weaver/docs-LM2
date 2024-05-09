@@ -4,6 +4,8 @@
 Data Cleaning Considerations
 ==============================
 
+File names
+----------
 
 LeafMachine **WILL** automatically edit illegal characters out of file names and replace them with ``_`` or ``-``.
 
@@ -21,7 +23,7 @@ Also, all images will be rotated to be vertical - downstream processes rely on t
 
 * Illegal character replacement and image rotation can be turned off, but doing so will likely cause bad things to happen. Change these config settings to ``False``:
 
-.. code-block:: python
+.. code-block:: yaml
 
     leafmachine:
         do:

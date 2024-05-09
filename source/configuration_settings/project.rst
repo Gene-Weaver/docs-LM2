@@ -44,8 +44,8 @@ On your first run, set ``batch_size: 5 num_workers: 2`` just to make sure everyt
             num_workers: 2 # default = 2
 
 
-Secondary (project)
--------------------
+Secondary options (project)
+---------------------------
 
 These are less common options. Do not change unless you need to. Set to ``null`` if not in use. 
 
