@@ -3,6 +3,7 @@ html_theme_options = {
     "logo": {
         "text": "Leafmachine2",
     },
+    "announcement": "This documentation site is under active development as information is transcribed from the LeafMachine2 README. Some sections may be incomplete.",
     "navigation_with_keys": True,
     "show_nav_level": 2,
 }
