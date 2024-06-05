@@ -6,6 +6,8 @@ html_theme_options = {
     "announcement": "This documentation site is under active development as information is transcribed from the LeafMachine2 README. Some sections may be incomplete.",
     "navigation_with_keys": True,
     "show_nav_level": 2,
+    "footer_start": [],
+    "footer_end": [],
 }
 exclude_patterns = ["_build", ".venv", "docs"]
 extensions = ["sphinx_design", "sphinx_copybutton"]
