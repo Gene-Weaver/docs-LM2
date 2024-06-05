@@ -1,3 +1,6 @@
+version = "v2.1.0"
+
+html_static_path = ["_static"]
 html_theme = "pydata_sphinx_theme"
 html_theme_options = {
     "logo": {
@@ -8,6 +11,11 @@ html_theme_options = {
     "show_nav_level": 2,
     "footer_start": [],
     "footer_end": [],
+    "switcher": {
+        "json_url": "_static/switcher.json",
+        "version_match": version,
+    },
+    "navbar_start": ["navbar-logo", "version-switcher"],
 }
 exclude_patterns = ["_build", ".venv", "docs"]
 extensions = ["sphinx_design", "sphinx_copybutton"]
