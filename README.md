@@ -22,7 +22,13 @@ The documentation is written according to the [reStructured text format](https:/
 
 ## Building the site
 
-If you make a change to one of the source files and would like to see what it will look like, you can run `sphinx-build -M html .\source\ .\build -a` from the root of the `docs-LM2` repository. This will create a directory called `build` which will contain html files that can be served through the web browser. Navigate to this folder (either through the command line or through your file explorer) and open `index.html`. You should now be able to navigate a copy of the documentation site in your browser.
+If you make a change to one of the source files and would like to see what it will look like, run the following from the root of the `docs-LM2` respository 
+
+```shell
+sphinx-build -M html .\source\ .\build -a
+```
+
+This will create a directory called `build` which will contain html files that can be served through the web browser. Navigate to this folder (either through the command line or through your file explorer) and open `index.html`. You should now be able to navigate a copy of the documentation site in your browser. This build directory is ignored by git.
 
 ## Contributing
 
