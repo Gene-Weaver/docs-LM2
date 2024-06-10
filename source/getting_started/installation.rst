@@ -160,11 +160,11 @@ We include a ``requirements.txt`` file in the ``LeafMachine2/requirements/`` fol
 Troubleshooting CUDA
 --------------------
 
-- CUDA issues can be extremely frustrating. 
-- Start by finding your current CUDA version or installing the most recent CUDA version that is compatible with your GPU. 
+
+- CUDA issues can be extremely frustrating.
+- Start by finding your current CUDA version or installing the most recent CUDA version that is compatible with your GPU.
 - Try installing the old version of PyTorch listed in these docs.
 - If that works, great! If not, you can install the [latest pytorch release](https://pytorch.org/get-started/locally/) for your specific OS and CUDA version.
-- If that fails, you might have a CUDA installation issue. 
-- If you cannot get the GPU working, then you can install PyTorch with CPU only, avoiding the CUDA problem entirely, but that is not recommended given that 
-LeafMachine2 is designed to use GPUs. The components that rely on ViT (binarization of labels) will *NOT* work without a GPU. The leaf segmentation may not work either, sometimes it does, sometimes not. 
-- We have also validated CUDA 12.4 with PyTorch 2.X. If you have success with other versions of CUDA/pytorch, let us know and we will update our instructions. 
+- If that fails, you might have a CUDA installation issue.
+- If you cannot get the GPU working, then you can install PyTorch with CPU only, avoiding the CUDA problem entirely, but that is not recommended given that LeafMachine2 is designed to use GPUs. The components that rely on ViT (binarization of labels) will *NOT* work without a GPU. The leaf segmentation may not work either, sometimes it does, sometimes not. To ensure LM2 runs on a CPU *only*, go to ``leafmachine2/segmentation/detectron2/detectron2/modeling/meta_arch/build.py`` replace the line ``model.to(torch.device(cfg.MODEL.DEVICE))`` on line 23 to ``model.to(torch.device('cpu’))``. Again, this is not recommended.
+- We have also validated CUDA 12.4 with PyTorch 2.X. If you have success with other versions of CUDA/pytorch, let us know and we will update our instructions.
