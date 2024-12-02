@@ -166,9 +166,17 @@ We include a ``requirements.txt`` file in the ``LeafMachine2/requirements/`` fol
         
         Leafmachine2 algorithms require PyTorch version 1.11 for CUDA version 11.3+. If your computer does not have a GPU, then use the CPU version and the CUDA version is not applicable. PyTorch is large and will take a bit to install.
 
+        With GPU
+
         4. .. code-block:: bash
         
             pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
+        
+        With CPU only
+        
+        4. .. code-block:: bash
+
+            pip install torch torchvision torchaudio
         
         Install ViT for PyTorch. ViT is used for segmenting labels and rulers. The DocEnTr framework that we use for document image segmentation requires an older verison of ViT, the most recent version will cause an error.
 
