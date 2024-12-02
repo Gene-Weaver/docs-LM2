@@ -4,6 +4,8 @@ Installation
 
 .. attention:: To complete the steps below, you must have installed all of the prerequisites on your machine. If you haven't, please go to prerequisites and install them. 
 
+.. important:: AMD Radeon GPUs are not presently supported, but it is possible if you want to modify the pytorch installation. If you have a Radeon GPU, proceed with the CPU only based instructions.
+
 Cloning the leafmachine2 repository
 -----------------------------------
 
