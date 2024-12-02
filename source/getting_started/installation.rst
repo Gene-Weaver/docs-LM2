@@ -49,20 +49,29 @@ We include a ``requirements.txt`` file in the ``LeafMachine2/requirements/`` fol
 
 .. tab-set::
 
-    .. tab-item:: Ubuntu 20.04+
+    .. tab-item:: Ubuntu 20.04+ or macOS
         :sync: key1
 
         **Quick Installation**
 
-        1. .. code-block:: bash 
+        Install the python packages as outlined in the requirements
+
+        .. code-block:: bash 
 
             pip install -r requirements.txt
 
-        2. .. code-block:: bash 
+        If your computer has a GPU use
+
+        .. code-block:: bash 
 
             pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
-        
 
+        If your computer *does not have* a GPU or you are using a Mac
+
+        .. code-block:: bash
+
+            pip3 install torch torchvision torchaudio
+        
         **Detailed Installation**
 
         Install wheel
@@ -98,9 +107,17 @@ We include a ``requirements.txt`` file in the ``LeafMachine2/requirements/`` fol
 
         LeafMachine2 algorithms require PyTorch version 1.11 for CUDA version 11.3+. If your computer does not have a GPU, then use the CPU version and the CUDA version is not applicable. PyTorch is large and will take a bit to install.
 
+        If your computer has a GPU
+ 
         6. .. code-block:: bash
         
             pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
+
+        If your computer does not have a GPU or you are using a Mac
+
+        6. .. code-block:: bash
+
+            pip3 install torch torchvision torchaudio
 
         Install ViT for PyTorch. ViT is used for segmenting labels and rulers. The DocEnTr framework that we use for document image segmentation requires an older verison of ViT, the most recent version will cause an error.
 
@@ -165,6 +182,5 @@ Troubleshooting CUDA
 - Try installing the old version of PyTorch listed in these docs.
 - If that works, great! If not, you can install the [latest pytorch release](https://pytorch.org/get-started/locally/) for your specific OS and CUDA version.
 - If that fails, you might have a CUDA installation issue. 
-- If you cannot get the GPU working, then you can install PyTorch with CPU only, avoiding the CUDA problem entirely, but that is not recommended given that 
-LeafMachine2 is designed to use GPUs. The components that rely on ViT (binarization of labels) will *NOT* work without a GPU. The leaf segmentation may not work either, sometimes it does, sometimes not. 
+- If you cannot get the GPU working, then you can install PyTorch with CPU only, avoiding the CUDA problem entirely, but that is not recommended given that LeafMachine2 is designed to use GPUs. The components that rely on ViT (binarization of labels) will *NOT* work without a GPU. The leaf segmentation may not work either, sometimes it does, sometimes not. 
 - We have also validated CUDA 12.4 with PyTorch 2.X. If you have success with other versions of CUDA/pytorch, let us know and we will update our instructions. 
