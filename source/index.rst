@@ -1,8 +1,6 @@
 leafmachine2 documentation
 =========================================
 
-**Date:** May 07, 2024 **Version:** 2.1
-
 .. toctree::
    :hidden:
 
